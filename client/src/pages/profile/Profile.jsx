@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { FiSettings, FiActivity, FiDollarSign, FiClock, FiAward, FiUser } from 'react-icons/fi';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
-
+import profileImg from '../../assets/profile.png'
+import { useSelector } from 'react-redux';
 const ProfileDashboard = ({ profile }) => {
+  const data = useSelector(state=>state.auth)
   const [activeTab, setActiveTab] = useState('overview');
   const [editMode, setEditMode] = useState(false);
   
@@ -43,10 +45,10 @@ const ProfileDashboard = ({ profile }) => {
       {/* Left Sidebar */}
       <div className="w-full lg:w-64 xl:w-80 bg-white border-r border-gray-200 p-6">
         {/* Profile Summary */}
-        <div className="mb-8">
-          <div className="relative mb-4">
+        <div className="mb-8 grid ">
+          <div className="relative mb-4 justify-self-center">
             <img
-              src={profile.profilePicture || '/default-avatar.png'}
+              src={profileImg }
               className="w-20 h-20 rounded-xl object-cover border-2 border-white shadow-sm"
               alt="Profile"
             />
@@ -58,8 +60,10 @@ const ProfileDashboard = ({ profile }) => {
             </button>
           </div>
           
-          <h2 className="text-xl font-semibold mb-1">
-            {profile.firstName} {profile.lastName}
+          <h2 className="text-xl font-semibold mb-1 text-center">
+            {data?.user?.username}
+            {/* {profile.firstName} {profile.lastName} */}
+
           </h2>
           <p className="text-sm text-gray-500 mb-4">{profile.bio || 'No bio added'}</p>
           

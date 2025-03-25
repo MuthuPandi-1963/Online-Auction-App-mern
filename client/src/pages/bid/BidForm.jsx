@@ -13,7 +13,7 @@ const BidForm = ({ currentPrice, bidAmount, setBidAmount, handleBid }) => {
           />
           <button 
             onClick={handleBid}
-            className="btn-primary"
+            className="bg-blue-700 px-4 py-[10px] rounded-md hover:bg-blue-500 text-white cursor-pointer"
           >
             Place Bid
           </button>

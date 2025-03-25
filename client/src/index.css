@@ -1,0 +1,15 @@
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'swiper/css';
+@import 'swiper/css/pagination';
+@import 'swiper/css/navigation';
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+.nav{
+    @apply cursor-pointer sticky top-0 z-50
+}
+
+.menuLinks *{
+    @apply hover:text-blue-400 cursor-pointer
+}
